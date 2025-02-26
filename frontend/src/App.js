@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import CreateProduct from './pages/createProduct';
 import MyProducts from './pages/myProducts';
 import Cart from './pages/cart';
-import ProductDetails from './pages/productDetails';
+import ProductDetails from './pages/ProductDetails';
 const App = () => {
   return (
     <BrowserRouter>
