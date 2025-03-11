@@ -9,6 +9,7 @@ import MyProducts from "./pages/myProducts";
 import Cart from "./pages/cart";
 import ProductDetails from "./pages/ProductDetails";
 import Profile from "./pages/profile";
+import CreateAddress from "./pages/createAddress";
 const App = () => {
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/my-products" element={<MyProducts />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/create-address" element={<CreateAddress />} />
       </Routes>
     </BrowserRouter>
   );
