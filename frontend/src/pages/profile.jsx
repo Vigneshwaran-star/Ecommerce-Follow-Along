@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import AddressCard from "../components/AddressCard";
 import NavBar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 export default function Profile() {
+  const email = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [personalDetails, setPersonalDetails] = useState({
     name: "",
@@ -15,8 +16,9 @@ export default function Profile() {
   const [addresses, setAddresses] = useState([]);
 
   useEffect(() => {
+    if (!email) return;
     fetch(
-      `http://localhost:8000/api/v2/user/profile?email=${"vickysololeveling1@gmail.com"}`,
+      `http://localhost:8000/api/v2/user/profile?email=${"email"}`,
       {
         method: "GET",
       }

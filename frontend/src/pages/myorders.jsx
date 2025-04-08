@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Nav from "../components/Navbar";
-
+import { useSelector } from "react-redux";
 const MyOrdersPage = () => {
   const [orders, setOrders] = useState([]);
-  const email = "vickysololeveling1@gmail.com";
+  // const email = "vickysololeveling1@gmail.com";
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
+ const email = useSelector((state) => state.user.email);
   const fetchOrders = async () => {
+    if (!email) return;
     try {
       setLoading(true);
       setError("");
@@ -47,7 +48,7 @@ const MyOrdersPage = () => {
 
   useEffect(() => {
     fetchOrders();
-  }, []);
+  }, [email]);
 
   return (
     <>

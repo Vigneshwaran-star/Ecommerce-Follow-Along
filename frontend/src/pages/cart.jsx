@@ -3,16 +3,17 @@ import NavBar from "../components/Navbar";
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 const Cart = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-
+ const email = useSelector((state) => state.user.email)
   const handlePlaceOrder = () => {
     navigate("/select-address");
   };
 
   useEffect(() => {
+    if (!email) return;
     fetch(
       `http://localhost:8000/api/v2/product/cartproducts?email=${"vickysololeveling1@gmail.com"}`
     )
@@ -53,7 +54,7 @@ const Cart = () => {
       .catch((err) => {
         console.error(" Error fetching products:", err);
       });
-  }, []);
+  }, [email]);
 
   console.log("Products:", products);
 
