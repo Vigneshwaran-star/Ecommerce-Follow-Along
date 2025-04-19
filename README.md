@@ -184,9 +184,9 @@ In Milestone 34, we implemented route protection using JWT authentication by val
 
 ## Milestone 35  
 In Milestone 35, we deployed both the backend and frontend of the application. The backend was deployed using a hosting service and is accessible at:  
-**Backend URL:** `https://ecommerce-online-store-front.onrender.com`  
+**Backend URL:** https://ecommerce-online-store-front.onrender.com  
 
 This link replaced all instances of `localhost` in the frontend code to enable proper API communication. After that, the frontend was deployed using a deployment platform and is available at:  
-**Frontend URL:** `https://ecommerce-online-store-back.onrender.com`  
+**Frontend URL:** https://ecommerce-online-store-back.onrender.com 
 
 Finally, we tested both deployments to ensure they are working correctly together in the production environment, confirming successful integration and functionality.
