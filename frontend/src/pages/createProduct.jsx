@@ -40,7 +40,10 @@ const CreateProduct = () => {
                   setEmail(p.email);
                   if (p.images && p.images.length > 0) {
                       setPreviewImages(
-                          p.images.map((imgPath) => `https://ecommerce-online-store-backend.onrender.com${imgPath}`)
+                        p.images.map(
+                          (imgPath) =>
+                            `https://ecommerce-online-store-backend-z1ve.onrender.com{imgPath}`
+                        )
                       );
                   }
               })
